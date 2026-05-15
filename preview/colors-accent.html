@@ -1,0 +1,19 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Brand Accent Colors</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { background: var(--mva-paper); padding: 16px; }
+  .row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .sw { border-radius: 12px; aspect-ratio: 5/4; padding: 10px; display:flex; flex-direction:column; justify-content:flex-end; font-family: var(--font-body); }
+  .sw .name { font-weight: 700; font-size: 13px; line-height: 1.1; }
+  .sw .hex  { font-size: 11px; opacity: .85; }
+  .sw.dark { color: var(--mva-navy); }
+  .sw.light { color: #fff; }
+</style></head>
+<body>
+<div class="row">
+  <div class="sw dark" style="background:var(--mva-yellow)"><div class="name">Yellow</div><div class="hex">#ffd632</div></div>
+  <div class="sw light" style="background:var(--mva-orange)"><div class="name">Orange</div><div class="hex">#ff7828</div></div>
+  <div class="sw dark" style="background:var(--mva-pink)"><div class="name">Pink</div><div class="hex">#fea0f6</div></div>
+  <div class="sw light" style="background:var(--mva-grey)"><div class="name">Grey (text)</div><div class="hex">#333333</div></div>
+</div>
+</body></html>

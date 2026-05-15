@@ -1,0 +1,27 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Forms</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { padding: 18px; background: var(--mva-paper); font-family: var(--font-body); }
+  .field { display: grid; gap: 6px; margin-bottom: 12px; max-width: 380px; }
+  label { font-size: 12px; font-weight: 700; color: var(--fg-2); letter-spacing: .04em; text-transform: uppercase; }
+  input, select {
+    height: 46px; padding: 0 14px; border-radius: 12px;
+    border: 1.5px solid var(--line); background: #fff;
+    font-family: var(--font-body); font-size: 15px; color: var(--mva-navy);
+    transition: border-color var(--dur-base) var(--ease-out);
+  }
+  input:focus, select:focus { outline: none; border-color: var(--mva-teal); box-shadow: 0 0 0 4px rgba(64,180,166,.18); }
+  .check { display:flex; align-items:center; gap: 10px; }
+  .check input { width: 18px; height: 18px; accent-color: var(--mva-teal); }
+</style></head>
+<body>
+<div class="field">
+  <label>Parent's name</label>
+  <input value="Hannah Ostlere" />
+</div>
+<div class="field">
+  <label>Child's year group</label>
+  <select><option>Year 9</option><option>Year 10</option><option>Year 11</option></select>
+</div>
+<div class="field check"><input type="checkbox" checked id="c"><label for="c" style="text-transform:none;letter-spacing:0;font-size:14px;color:var(--mva-navy);font-weight:400">Send me the prospectus</label></div>
+</body></html>

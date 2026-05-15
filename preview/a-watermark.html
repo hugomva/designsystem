@@ -1,0 +1,43 @@
+<!doctype html><html><head><meta charset="utf-8"><title>VA Watermark Overlay</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { padding: 0; margin: 0; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 0; }
+  .panel { aspect-ratio: 4/3; position: relative; overflow: hidden; }
+  .panel .va {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+  }
+  /* Dark surfaces, overlay shows white at full opacity */
+  .panel.dark .va { opacity: 1; }
+  /* Light surfaces, invert to dark, multiply for soft tonal layer */
+  .panel.light .va { filter: invert(1); opacity: .35; mix-blend-mode: multiply; }
+
+  .label {
+    position: absolute; left: 12px; top: 12px;
+    font-family: var(--font-display); font-weight: 700; font-size: 18px;
+    color: rgba(255,255,255,.95); z-index: 2;
+  }
+  .pink   { background: var(--mva-pink); }   .pink   .label { color: var(--mva-navy); }
+  .yellow { background: var(--mva-yellow); } .yellow .label { color: var(--mva-navy); }
+  .blue   { background: var(--mva-blue); }
+  .teal   { background: var(--mva-teal); }
+  .navy   { background: var(--mva-navy); }
+  .og     { background: var(--mva-og); }
+  .orange { background: var(--mva-orange); }
+  .mint   { background: var(--mva-mint); }   .mint   .label { color: var(--mva-navy); }
+</style></head>
+<body>
+<div class="grid">
+  <div class="panel light pink"><div class="label">Pink</div><img class="va" src="../assets/logos/va-overlay.png" alt=""></div>
+  <div class="panel light yellow"><div class="label">Yellow</div><img class="va" src="../assets/logos/va-overlay.png" alt=""></div>
+  <div class="panel dark blue"><div class="label">Blue</div><img class="va" src="../assets/logos/va-overlay.png" alt=""></div>
+  <div class="panel dark teal"><div class="label">Teal</div><img class="va" src="../assets/logos/va-overlay.png" alt=""></div>
+  <div class="panel dark navy"><div class="label">Navy</div><img class="va" src="../assets/logos/va-overlay.png" alt=""></div>
+  <div class="panel dark og"><div class="label">OG</div><img class="va" src="../assets/logos/va-overlay.png" alt=""></div>
+  <div class="panel dark orange"><div class="label">Orange</div><img class="va" src="../assets/logos/va-overlay.png" alt=""></div>
+  <div class="panel light mint"><div class="label">Mint</div><img class="va" src="../assets/logos/va-overlay.png" alt=""></div>
+</div>
+</body></html>

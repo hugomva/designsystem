@@ -1,0 +1,28 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Brand Colors</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { background: var(--mva-paper); padding: 16px; }
+  .row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+  .sw {
+    border-radius: 12px;
+    aspect-ratio: 5/4;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #fff;
+    font-family: var(--font-body);
+  }
+  .sw .name { font-weight: 700; font-size: 13px; line-height: 1.1; }
+  .sw .hex  { font-size: 11px; opacity: .85; letter-spacing: .02em; }
+  .sw.dark { color: var(--mva-navy); }
+</style></head>
+<body>
+<div class="row">
+  <div class="sw" style="background:var(--mva-navy)"><div class="name">Navy</div><div class="hex">#0d2f69</div></div>
+  <div class="sw" style="background:var(--mva-blue)"><div class="name">Blue</div><div class="hex">#277ba6</div></div>
+  <div class="sw" style="background:var(--mva-og)"><div class="name">OG</div><div class="hex">#3c96aa</div></div>
+  <div class="sw" style="background:var(--mva-teal)"><div class="name">Teal</div><div class="hex">#40b4a6</div></div>
+  <div class="sw dark" style="background:var(--mva-mint)"><div class="name">Mint</div><div class="hex">#82ecb9</div></div>
+</div>
+</body></html>
