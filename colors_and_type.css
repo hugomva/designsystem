@@ -1,0 +1,290 @@
+/* ==========================================================================
+   Minerva Virtual Academy, Foundations
+   Colors, type scales, fonts, and semantic tokens.
+   Source of truth for all MVA design work.
+   ========================================================================== */
+
+/* ---------- Fonts -------------------------------------------------------- */
+@font-face {
+  font-family: "Viney";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("fonts/Viney-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Darkmode";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("fonts/DarkmodeOff-Rg.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Darkmode";
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src: url("fonts/DarkmodeOff-It.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Darkmode";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("fonts/DarkmodeOff-Bd.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Darkmode";
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+  src: url("fonts/DarkmodeOff-BdIt.woff2") format("woff2");
+}
+
+:root {
+  /* ---------- Brand color palette (per Brand Guidelines V4, May 2025) --- */
+  --mva-mint:   #82ecb9;     /* Soft accent / highlight pill */
+  --mva-og:     #3c96aa;     /* Original Gangster teal-blue (default hero bg) */
+  --mva-blue:   #277ba6;     /* Mid blue */
+  --mva-navy:   #0d2f69;     /* Logo navy / primary text on light */
+  --mva-teal:   #40b4a6;     /* Active / secondary accent */
+  --mva-yellow: #ffd632;     /* Bold yellow */
+  --mva-orange: #ff7828;     /* Top promo bar / CTAs */
+  --mva-pink:   #fea0f6;     /* Bold pink */
+  --mva-grey:   #333333;     /* Body text on light backgrounds */
+
+  /* Soft tints (used inside cards, gradients) */
+  --mva-mint-50:   #e6fbf0;
+  --mva-yellow-50: #fff5cf;
+  --mva-pink-50:   #ffe6fb;
+  --mva-blue-50:   #d8eaf2;
+
+  /* Neutrals */
+  --mva-white:  #ffffff;
+  --mva-paper:  #fafbfb;     /* off-white page bg */
+  --mva-line:   #e6ecef;     /* hairline / divider */
+  --mva-ink:    #0d2f69;     /* same as navy, primary ink */
+  --mva-ink-2:  #4a5b7d;     /* secondary ink */
+  --mva-ink-3:  #8493ae;     /* tertiary / captions */
+
+  /* ---------- Semantic foreground / background ------------------------- */
+  --bg:          var(--mva-paper);
+  --bg-elev:     var(--mva-white);
+  --bg-brand:    var(--mva-og);          /* default coloured background */
+  --bg-brand-2:  var(--mva-navy);
+  --fg:          var(--mva-ink);
+  --fg-2:        var(--mva-ink-2);
+  --fg-3:        var(--mva-ink-3);
+  --fg-on-brand: var(--mva-white);
+  --line:        var(--mva-line);
+  --accent:      var(--mva-mint);
+  --accent-ink:  var(--mva-navy);
+
+  /* ---------- Type families -------------------------------------------- */
+  --font-display: "Viney", "DM Serif Display", "DM Serif Text", Georgia, serif;
+  --font-body:    "Darkmode", "DM Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono:    "Darkmode", ui-monospace, "JetBrains Mono", Menlo, monospace;
+
+  /* ---------- Type scale (fluid at the high end) ----------------------- */
+  --fs-d1: clamp(56px, 7vw, 120px);   /* hero display */
+  --fs-d2: clamp(44px, 5vw, 84px);    /* section display */
+  --fs-d3: clamp(32px, 3.6vw, 56px);  /* slide title */
+  --fs-h1: 40px;
+  --fs-h2: 28px;
+  --fs-h3: 22px;
+  --fs-h4: 18px;
+  --fs-body: 17px;
+  --fs-body-sm: 15px;
+  --fs-cap: 13px;
+  --fs-eyebrow: 12px;
+
+  --lh-tight: 1.02;
+  --lh-display: 1.05;
+  --lh-heading: 1.15;
+  --lh-body: 1.55;
+
+  --tracking-display: -0.015em;
+  --tracking-tight:   -0.01em;
+  --tracking-eyebrow: 0.08em;
+
+  /* ---------- Spacing -------------------------------------------------- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+  --sp-9: 96px;
+  --sp-10: 128px;
+
+  /* ---------- Radii ---------------------------------------------------- */
+  --r-xs: 6px;
+  --r-sm: 10px;
+  --r-md: 16px;
+  --r-lg: 24px;
+  --r-xl: 32px;
+  --r-pill: 999px;
+
+  /* ---------- Shadows -------------------------------------------------- */
+  --shadow-sm: 0 1px 2px rgba(13, 47, 105, 0.06), 0 1px 1px rgba(13, 47, 105, 0.04);
+  --shadow-md: 0 6px 18px rgba(13, 47, 105, 0.10), 0 2px 4px rgba(13, 47, 105, 0.05);
+  --shadow-lg: 0 20px 50px rgba(13, 47, 105, 0.14), 0 6px 12px rgba(13, 47, 105, 0.06);
+
+  /* ---------- Motion --------------------------------------------------- */
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 140ms;
+  --dur-base: 220ms;
+  --dur-slow: 420ms;
+
+  /* ---------- Layout --------------------------------------------------- */
+  --max-w: 1280px;
+  --max-w-prose: 68ch;
+  --header-h: 76px;
+}
+
+/* ---------- Resets / base ------------------------------------------------ */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Semantic typography ------------------------------------------ */
+.display-1, h1.display, .hero-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-d1);
+  line-height: var(--lh-display);
+  letter-spacing: var(--tracking-display);
+  color: var(--fg);
+  margin: 0;
+}
+.display-2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-d2);
+  line-height: var(--lh-display);
+  letter-spacing: var(--tracking-display);
+  margin: 0;
+}
+.display-3, .slide-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-d3);
+  line-height: var(--lh-display);
+  letter-spacing: var(--tracking-display);
+  margin: 0;
+}
+h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-h1);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--tracking-tight);
+  margin: 0 0 var(--sp-4);
+}
+h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--tracking-tight);
+  margin: 0 0 var(--sp-3);
+}
+h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-h3);
+  line-height: var(--lh-heading);
+  margin: 0 0 var(--sp-3);
+}
+h4 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--fs-h4);
+  line-height: var(--lh-heading);
+  margin: 0 0 var(--sp-2);
+}
+p { margin: 0 0 var(--sp-4); text-wrap: pretty; }
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--fg-2);
+}
+.caption {
+  font-size: var(--fs-cap);
+  color: var(--fg-3);
+}
+.lead {
+  font-family: var(--font-body);
+  font-size: 19px;
+  line-height: 1.5;
+  color: var(--fg-2);
+}
+.quote, blockquote {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-heading);
+  color: var(--fg);
+  margin: 0;
+}
+code, .code {
+  font-family: var(--font-mono);
+  font-size: 0.95em;
+  background: var(--mva-blue-50);
+  padding: 0.1em 0.35em;
+  border-radius: var(--r-xs);
+}
+
+/* ---------- Highlight pill (signature MVA treatment) --------------------- */
+.highlight,
+.hl-mint {
+  background: var(--mva-mint);
+  color: var(--mva-navy);
+  padding: 0.05em 0.32em;
+  border-radius: 0;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.hl-yellow { background: var(--mva-yellow); color: var(--mva-navy); padding: 0.05em 0.32em; border-radius: 0; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.hl-pink   { background: var(--mva-pink);   color: var(--mva-navy); padding: 0.05em 0.32em; border-radius: 0; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.hl-orange { background: var(--mva-orange); color: var(--mva-white); padding: 0.05em 0.32em; border-radius: 0; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+
+/* ---------- Surfaces ----------------------------------------------------- */
+.surface-brand    { background: var(--mva-og);    color: var(--fg-on-brand); }
+.surface-navy     { background: var(--mva-navy);  color: var(--fg-on-brand); }
+.surface-teal     { background: var(--mva-teal);  color: var(--fg-on-brand); }
+.surface-blue     { background: var(--mva-blue);  color: var(--fg-on-brand); }
+.surface-yellow   { background: var(--mva-yellow); color: var(--mva-navy); }
+.surface-pink     { background: var(--mva-pink);   color: var(--mva-navy); }
+.surface-orange   { background: var(--mva-orange); color: var(--mva-white); }
+.surface-mint     { background: var(--mva-mint);   color: var(--mva-navy); }
+
+/* Signature MVA gradient (navy → teal → mint) for full-bleed hero blocks */
+.surface-gradient {
+  background:
+    radial-gradient(120% 80% at 0% 100%, var(--mva-mint) 0%, transparent 55%),
+    radial-gradient(120% 80% at 100% 0%, var(--mva-blue) 0%, transparent 50%),
+    linear-gradient(135deg, var(--mva-navy) 0%, var(--mva-og) 60%, var(--mva-teal) 100%);
+  color: var(--fg-on-brand);
+}
+
+/* ---------- Container ---------------------------------------------------- */
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--sp-5); }
+.prose { max-width: var(--max-w-prose); }
+
+/* ---------- Selection ---------------------------------------------------- */
+::selection { background: var(--mva-mint); color: var(--mva-navy); }
